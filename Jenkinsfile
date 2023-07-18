@@ -23,9 +23,9 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            echo 'SonarQube Analysis'
-            // steps{
+        stage('SonarQube Analysis') {            
+            steps{
+                echo 'SonarQube Analysis'
             //     withSonarQubeEnv('SonarQube-Server'){
             //         sh '''
             //             ./mvnw sonar:sonar \
@@ -34,11 +34,11 @@ pipeline {
             //             -Dsonar.login=071444a4a1fe9176a224c1d6ff6722c6c2fae596
             //         '''
             //     }
-            // }
+            }
         }
-        stage('SonarQube Quality Gate'){
-            echo 'SonarQube Quality Gate'
-            // steps{
+        stage('SonarQube Quality Gate'){            
+            steps{
+                echo 'SonarQube Quality Gate'
             //     timeout(time: 2, unit: 'MINUTES') {
             //         script{
             //             def qg = waitForQualityGate()
@@ -50,7 +50,7 @@ pipeline {
             //             }
             //         }
             //     }
-            // }
+            }
         }
     }
 }
